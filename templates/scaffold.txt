@@ -1,0 +1,8 @@
+[out:json][timeout:200];
+area["name"="Winterthur"]->.a;
+(
+{{ query }}
+);
+out body;
+>;
+out skel qt;

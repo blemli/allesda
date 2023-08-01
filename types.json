@@ -1,0 +1,68 @@
+[
+    {
+        "einzahl": "Friseur", 
+        "mehrzahl":"Friseure", 
+        "query": "node(area.a)['shop'='hairdresser'];"
+    },
+    {
+        "einzahl": "Bäckerei",
+        "mehrzahl": "Bäckereien",
+        "query": "node(area.a)['shop'='bakery'];"
+    },
+    {
+        "einzahl": "Metzgerei",
+        "mehrzahl": "Metzgereien",
+        "query": "node(area.a)['shop'='butcher'];\nrelation(area.a)['shop'='butcher'];"
+    },
+    {
+        "einzahl": "Guitarrenbauer",
+        "mehrzahl": "Guitarrenbauer",
+        "query": "node(area.a)['craft'='musical_instrument'];"
+    },
+    {
+        "einzahl": "Mülleimer",
+        "mehrzahl": "Mülleimer",
+        "query": "node(area.a)['amenity'='waste_basket'];",
+        "approximate": true
+    },
+    {
+        "einzahl": "Bahnhof",
+        "mehrzahl": "Bahnhöfe",
+        "query": "node(area.a)['railway'='station'];\nnode(area.a)['railway'='halt'];"
+    },
+    {
+        "einzahl":"Hydrant",
+        "mehrzahl":"Hydranten",
+        "query": "node(area.a)['emergency'='fire_hydrant'];",
+        "approximate": true
+    },
+    {
+        "einzahl": "Krankenhaus",
+        "mehrzahl": "Krankenhäuser",
+        "query": "way(area.a)['healthcare'='hospital'];\nnode(area.a)['healthcare'='hospital'];"
+    },
+    {
+        "einzahl": "Parkplatz",
+        "mehrzahl": "Parkplätze",
+        "query": "node(area.a)['amenity'='parking'];\nrelation(area.a)['amenity'='parking'];",
+        "process":"[x.tags.capacity for x in result if 'capacity' in x.tags]",
+        "approximate": true
+    },
+    {
+        "einzahl":"Baum",
+        "mehrzahl":"Bäume",
+        "query": "node(area.a)['natural'='tree'];\nrelation(area.a)['natural'='tree'];",
+        "approximate": true
+    },
+    {
+        "einzahl": "Veloständer",
+        "mehrzahl": "Veloständer",
+        "query": "node(area.a)['amenity'='bicycle_parking'];\nrelation(area.a)['amenity'='bicycle_parking'];",
+        "approximate": true
+    },
+    {
+        "einzahl":"Vita Parcours",
+        "mehrzahl":"Vita Parcours",
+        "query": "way(area.a)['leisure'='fitness_station'];"
+    }
+]
