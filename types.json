@@ -1,23 +1,27 @@
 [
     {
-        "einzahl": "Friseur", 
-        "mehrzahl":"Friseure", 
-        "query": "node(area.a)['shop'='hairdresser'];"
+        "einzahl": "Coiffeur", 
+        "mehrzahl":"Coiffeure", 
+        "query": "node(area.a)['shop'='hairdresser'];",
+        "approximate": false
     },
     {
         "einzahl": "Bäckerei",
         "mehrzahl": "Bäckereien",
-        "query": "node(area.a)['shop'='bakery'];"
+        "query": "node(area.a)['shop'='bakery'];",
+        "approximate": false
     },
     {
         "einzahl": "Metzgerei",
         "mehrzahl": "Metzgereien",
-        "query": "node(area.a)['shop'='butcher'];\nrelation(area.a)['shop'='butcher'];"
+        "query": "node(area.a)['shop'='butcher'];\nrelation(area.a)['shop'='butcher'];",
+        "approximate": false
     },
     {
-        "einzahl": "Guitarrenbauer",
-        "mehrzahl": "Guitarrenbauer",
-        "query": "node(area.a)['craft'='musical_instrument'];"
+        "einzahl": "Gitarrenbauer",
+        "mehrzahl": "Gitarrenbauer",
+        "query": "node(area.a)['craft'='musical_instrument'];",
+        "approximate": false
     },
     {
         "einzahl": "Mülleimer",
@@ -28,7 +32,14 @@
     {
         "einzahl": "Bahnhof",
         "mehrzahl": "Bahnhöfe",
-        "query": "node(area.a)['railway'='station'];\nnode(area.a)['railway'='halt'];"
+        "query": "node(area.a)['railway'='station'];\nnode(area.a)['railway'='halt'];",
+        "approximate": false
+    },
+    {
+        "einzahl": "Bushaltestelle",
+        "mehrzahl": "Bushaltestellen",
+        "query": "node(area.a)['highway'='bus_stop'];",
+        "approximate": false
     },
     {
         "einzahl":"Hydrant",
@@ -39,11 +50,12 @@
     {
         "einzahl": "Krankenhaus",
         "mehrzahl": "Krankenhäuser",
-        "query": "way(area.a)['healthcare'='hospital'];\nnode(area.a)['healthcare'='hospital'];"
+        "query": "way(area.a)['healthcare'='hospital'];\nnode(area.a)['healthcare'='hospital'];",
+        "approximate": false
     },
     {
-        "einzahl": "Parkplatz",
-        "mehrzahl": "Parkplätze",
+        "einzahl": "öffentlicher Parkplatz",
+        "mehrzahl": "öffentliche Parkplätze",
         "query": "node(area.a)['amenity'='parking'];\nrelation(area.a)['amenity'='parking'];",
         "process":"[x.tags.capacity for x in result if 'capacity' in x.tags]",
         "approximate": true
@@ -55,14 +67,150 @@
         "approximate": true
     },
     {
+        "einzahl":"Sitzbank",
+        "mehrzahl":"Sitzbänke",
+        "query": "node(area.a)['amenity'='bench'];",
+        "approximate": true
+    },
+    {
+        "einzahl":"Trinkbrunnen",
+        "mehrzahl":"Trinkbrunnen",
+        "query": "node(area.a)['amenity'='drinking_water'];",
+        "approximate": true,
+        "correct":false
+    },
+    {
         "einzahl": "Veloständer",
         "mehrzahl": "Veloständer",
         "query": "node(area.a)['amenity'='bicycle_parking'];\nrelation(area.a)['amenity'='bicycle_parking'];",
-        "approximate": true
+        "approximate": true,
+        "correct":false
     },
     {
         "einzahl":"Vita Parcours",
         "mehrzahl":"Vita Parcours",
-        "query": "way(area.a)['leisure'='fitness_station'];"
+        "query": "way(area.a)['leisure'='fitness_station'];",
+        "approximate": false
+    },
+    {
+        "einzahl":"Spielplatz",
+        "mehrzahl":"Spielplätze",
+        "query": "node(area.a)['leisure'='playground'];",
+        "approximate": false
+    },
+    {
+        "einzahl":"Schwimmbad",
+        "mehrzahl":"Schwimmbäder",
+        "query": "node(area.a)['leisure'='swimming_pool'];",
+        "approximate": false
+    },
+    {
+        "einzahl":"Restaurant",
+        "mehrzahl":"Restaurants",
+        "query": "node(area.a)['amenity'='restaurant'];\nrelation(area.a)['amenity'='restaurant'];",
+        "approximate": false
+    },
+    {
+        "einzahl":"Seilpark",
+        "mehrzahl":"Seilparks",
+        "query": "node(area.a)['leisure'='rope_course'];",
+        "approximate": false
+    },
+    {
+        "einzahl":"Kletterhalle",
+        "mehrzahl":"Kletterhallen",
+        "query": "node(area.a)['sport'='climbing'];",
+        "approximate": false 
+    },
+    {
+        "einzahl": "Boulderhalle",
+        "mehrzahl": "Boulderhallen",
+        "query": "node(area.a)['sport'='bouldering'];",
+        "approximate": false
+    },
+    {
+        "einzahl": "Seilerei",
+        "mehrzahl": "Seilereien",
+        "query": "node(area.a)['craft'='rope_maker'];",
+        "approximate": false
+    },
+    {
+        "einzahl":"Büchertauschbox",
+        "mehrzahl":"Büchertauschboxen",
+        "query": "node(area.a)['amenity'='public_bookcase'];",
+        "approximate": false
+    },
+    {
+        "einzahl":"Kiosk",
+        "mehrzahl":"Kioske",
+        "query": "node(area.a)['shop'='kiosk'];",
+        "approximate": false
+    },
+    {
+        "einzahl":"Comicladen",
+        "mehrzahl":"Comicläden",
+        "query": "node(area.a)['books'='comic'];",
+        "approximate": false
+    },
+    {
+        "einzahl":"Bibliothek",
+        "mehrzahl":"Bibliotheken",
+        "query": "node(area.a)['amenity'='library'];",
+        "approximate": false
+    },{
+        "einzahl":"Steinmetz",
+        "mehrzahl":"Steinmetze",
+        "query": "node(area.a)['craft'='stonemason'];",
+        "approximate": false,
+        "correct":false
+    },
+    {
+        "einzahl":"Geigenbauer",
+        "mehrzahl":"Geigenbauer",
+        "query": "node(area.a)['craft'='musical_instrument'];",
+        "approximate": false,
+        "correct":false
+    },
+    {
+        "einzahl": "Friedhof",
+        "mehrzahl": "Friedhöfe",
+        "query": "way(area.a)['landuse'='cemetery'];",
+        "approximate": false,
+        "correct":false
+    },
+    {
+        "einzahl": "Döner",
+        "mehrzahl": "Döner",
+        "query": "node(area.a)['cuisine'='kebab'];",
+        "approximate": false,
+        "correct":false
+    },
+    {
+        "einzahl":"Kaffeerösterei",
+        "mehrzahl":"Kaffeeröstereien",
+        "query": "node(area.a)['shop'='coffee'];",
+        "approximate": false,
+        "correct":true
+    },
+    {
+        "einzahl":"Nagelfabrik",
+        "mehrzahl":"Nagelfabriken",
+        "query": "node(area.a)['craft'='nails'];",
+        "approximate": false,
+        "correct":true
+    },
+    {
+        "einzahl":"Radiosstudio",
+        "mehrzahl":"Radiostudios",
+        "query": "node(area.a)['amenity'='studio']['studio'='radio'];",
+        "approximate": false,
+        "correct":false
+    },
+    {
+        "einzahl": "Handyreparatur Shop",
+        "mehrzahl": "Handyreparatur Shops",
+        "query": "node(area.a)['shop'='mobile_phone']['repair'='yes'];",
+        "approximate": false,
+        "correct":false
     }
 ]

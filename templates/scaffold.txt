@@ -1,5 +1,5 @@
 [out:json][timeout:200];
-area["name"="Winterthur"]->.a;
+area["name"="{{ area }}"]["admin_level"=8]->.a;
 (
 {{ query }}
 );
