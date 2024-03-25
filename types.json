@@ -3,7 +3,7 @@
         "einzahl": "Coiffeur", 
         "mehrzahl":"Coiffeure", 
         "query": "node(area.a)['shop'='hairdresser'];",
-        "approximate": false
+        "approximate": true
     },
     {
         "einzahl": "Bäckerei",
@@ -132,7 +132,8 @@
         "einzahl": "Seilerei",
         "mehrzahl": "Seilereien",
         "query": "node(area.a)['craft'='rope_maker'];",
-        "approximate": false
+        "approximate": false,
+        "expected":1
     },
     {
         "einzahl":"Büchertauschbox",
@@ -179,8 +180,8 @@
         "correct":false
     },
     {
-        "einzahl": "Döner",
-        "mehrzahl": "Döner",
+        "einzahl": "Dönerimbiss",
+        "mehrzahl": "Dönerimbisse",
         "query": "node(area.a)['cuisine'='kebab'];",
         "approximate": false,
         "correct":false
@@ -197,14 +198,16 @@
         "mehrzahl":"Nagelfabriken",
         "query": "node(area.a)['craft'='nails'];",
         "approximate": false,
-        "correct":true
+        "correct":true,
+        "expected":1
     },
     {
         "einzahl":"Radiosstudio",
         "mehrzahl":"Radiostudios",
         "query": "node(area.a)['amenity'='studio']['studio'='radio'];",
         "approximate": false,
-        "correct":false
+        "correct":false,
+        "expected":3
     },
     {
         "einzahl": "Handyreparatur Shop",
@@ -212,5 +215,56 @@
         "query": "node(area.a)['shop'='mobile_phone']['repair'='yes'];",
         "approximate": false,
         "correct":false
+    },
+    {
+        "einzahl": "Go-Kart Bahn",
+        "mehrzahl": "Go-Kart Bahnen",
+        "query": "node(area.a)['sport'='karting'];node(area.a)['leisure'='go_kart'];",
+        "approximate": false,
+        "correct":true
+    },
+    {
+        "einzahl": "Indoor Skydiving Halle",
+        "mehrzahl": "Indoor Skydiving Hallen",
+        "query": "node(area.a)['sport'='indoor_skydiving'];",
+        "approximate": false,
+        "correct":false,
+        "expected":1
+    },
+    {
+        "einzahl": "Schiessstand",
+        "mehrzahl": "Schiessstände",
+        "query": "node(area.a)['sport'='shooting'];",
+        "approximate": false,
+        "correct":false,
+        "expected":2
+    },
+        {
+        "einzahl": "Kreisel",
+        "mehrzahl": "Kreisel",
+        "query": "way(area.a)['junction'='roundabout'];",
+        "approximate": false,
+        "correct": false
+    },
+    {
+    "einzahl": "Stopschild",
+    "mehrzahl": "Stopschilder",
+    "query": "node(area.a)['highway'='stop'];",
+    "approximate": false,
+    "correct": false
+    },
+    {"einzahl": "Schulhaus",
+    "mehrzahl": "Schulhäuser",
+    "query": "node(area.a)['amenity'='school'];",
+    "approximate": false,
+    "correct": false
+    },
+    {
+        "einzahl": "Kino",
+    "mehrzahl": "Kinos",
+    "query": "node(area.a)['amenity'='cinema'];",
+    "approximate": false,
+    "expected": 4,
+    "correct": true
     }
 ]

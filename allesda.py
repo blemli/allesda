@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import json
 from jinja2 import Environment, FileSystemLoader
 from urllib.parse import quote

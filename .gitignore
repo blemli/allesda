@@ -271,3 +271,9 @@ $RECYCLE.BIN/
 allesda.md
 cache.sqlite
 demo_cache.sqlite
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/allesda.iml
