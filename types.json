@@ -273,5 +273,12 @@
         "query": "node(area.a)['amenity'='place_of_worship'];",
         "approximate":false,
         "correct": false
+    },
+    {
+    "einzahl": "Defibrillator",
+    "mehrzahl": "Defibrillatoren",
+    "query": "node(area.a)['emergency'='defibrillator'];",
+    "approximate": false,
+    "correct": true
     }
 ]
