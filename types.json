@@ -234,7 +234,7 @@
     {
         "einzahl": "Schiessstand",
         "mehrzahl": "Schiessstände",
-        "query": "node(area.a)['sport'='shooting'];",
+        "query": "way(area.a)['sport'='shooting'];",
         "approximate": false,
         "correct":false,
         "expected":2
