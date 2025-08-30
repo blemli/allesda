@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import json
 from jinja2 import Environment, FileSystemLoader
 from urllib.parse import quote
@@ -8,8 +9,10 @@ import requests
 import requests_cache
 
 
-# prepare
 import sys
+
+
+### prepare
 if len(sys.argv) > 1:
     area=sys.argv[1]
 else:
@@ -21,7 +24,7 @@ output_string=f"# In {area} gibt es... \n\n"
 requests_cache.install_cache('cache')
 
 
-#process
+### process
 with open('types.json') as json_file:
     types = json.load(json_file)
     for type in types:
