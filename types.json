@@ -266,5 +266,12 @@
     "approximate": false,
     "expected": 4,
     "correct": true
+    },
+    {
+        "einzahl": "Kirche",
+        "mehrzahl": "Kirchen",
+        "query": "node(area.a)['amenity'='place_of_worship'];",
+        "approximate":false,
+        "correct": false
     }
 ]
